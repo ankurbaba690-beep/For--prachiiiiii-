@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Prachi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0d0a0e;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    font-family: 'EB Garamond', serif;
+  }
+
+  .card {
+    max-width: 540px;
+    width: 100%;
+    background: linear-gradient(160deg, #1a1018 0%, #120e16 50%, #0f0c12 100%);
+    border: 1px solid rgba(220, 160, 180, 0.15);
+    border-radius: 2px;
+    padding: 60px 48px 70px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.8s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* rose petal blur glow */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(210, 100, 130, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(180, 80, 120, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .top-ornament {
+    text-align: center;
+    margin-bottom: 36px;
+    opacity: 0.4;
+  }
+  .top-ornament span {
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: #d4a0b0;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto 36px;
+    width: fit-content;
+  }
+  .divider-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(210, 140, 160, 0.3));
+  }
+  .divider-line.right {
+    background: linear-gradient(90deg, rgba(210, 140, 160, 0.3), transparent);
+  }
+  .divider-dot {
+    width: 4px; height: 4px;
+    background: rgba(210, 140, 160, 0.5);
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 38px;
+    color: #f0dde4;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: rgba(210, 140, 160, 0.5);
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  .intro {
+    font-size: 17px;
+    line-height: 1.9;
+    color: rgba(230, 210, 215, 0.75);
+    margin-bottom: 32px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .truth-line {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(230, 190, 200, 0.85);
+    margin-bottom: 44px;
+    line-height: 1.6;
+  }
+
+  .section-divider {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+    gap: 0;
+  }
+  .section-divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid rgba(210, 140, 160, 0.12);
+  }
+  .section-divider-symbol {
+    padding: 0 16px;
+    color: rgba(210, 140, 160, 0.3);
+    font-size: 14px;
+  }
+
+  .reasons {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 44px;
+  }
+
+  .reason {
+    font-size: 16px;
+    line-height: 1.85;
+    color: rgba(220, 200, 205, 0.7);
+    padding-left: 20px;
+    border-left: 1px solid rgba(210, 140, 160, 0.15);
+    animation: slideIn 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .reason em {
+    color: rgba(240, 200, 210, 0.95);
+    font-style: italic;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .reason:nth-child(1) { animation-delay: 0.3s; }
+  .reason:nth-child(2) { animation-delay: 0.5s; }
+  .reason:nth-child(3) { animation-delay: 0.7s; }
+  .reason:nth-child(4) { animation-delay: 0.9s; }
+  .reason:nth-child(5) { animation-delay: 1.1s; }
+  .reason:nth-child(6) { animation-delay: 1.3s; }
+  .reason:nth-child(7) { animation-delay: 1.5s; }
+  .reason:nth-child(8) { animation-delay: 1.7s; }
+
+  .portrait {
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba(220, 200, 208, 0.68);
+    font-style: italic;
+    margin-bottom: 44px;
+    padding: 28px 32px;
+    border: 1px solid rgba(210, 140, 160, 0.1);
+    border-radius: 1px;
+    background: rgba(210, 140, 160, 0.03);
+    position: relative;
+  }
+
+  .portrait::before {
+    content: '\201C';
+    position: absolute;
+    top: -8px; left: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    color: rgba(210, 140, 160, 0.2);
+    line-height: 1;
+  }
+
+  .closing {
+    text-align: center;
+  }
+
+  .closing-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(200, 175, 185, 0.55);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .closing-truth {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: rgba(240, 215, 222, 0.9);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .closing-promise {
+    font-size: 16px;
+    color: rgba(220, 195, 205, 0.75);
+    line-height: 1.9;
+    margin-bottom: 36px;
+  }
+
+  .heart-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: rgba(220, 150, 170, 0.8);
+    letter-spacing: 1px;
+  }
+
+  .heart {
+    color: #d46080;
+    font-style: normal;
+  }
+
+  .bottom-ornament {
+    margin-top: 48px;
+    text-align: center;
+    opacity: 0.25;
+  }
+  .bottom-ornament span {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #d4a0b0;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="top-ornament">
+    <span>a letter</span>
+  </div>
+
+  <h1>For Prachi</h1>
+  <p class="subtitle">with everything</p>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line right"></div>
+  </div>
+
+  <p class="intro">
+    They asked me — why do you love her so much.<br>
+    What's so special about her.<br><br>
+    I sat down. Stayed quiet for a few minutes.<br>
+    And then I said —<br><br>
+    <em>You just know. There doesn't have to be a reason.<br>
+    Your heart chooses her before your mind even gets a say.</em>
+  </p>
+
+  <p class="truth-line">And my heart chose Prachi.</p>
+
+  <div class="section-divider">
+    <hr><span class="section-divider-symbol">✦</span><hr>
+  </div>
+
+  <div class="reasons">
+    <p class="reason">I want to talk to you because you're the first person I think of when something happens — good or bad. My mind just automatically goes, <em>"I should tell her this."</em></p>
+    <p class="reason">I want to talk to you because even your simple <em>"hmm"</em> or <em>"okay"</em> feels different. It's not just a message. It's you. And somehow, that makes it important.</p>
+    <p class="reason">I want to talk to you because when you disappear for a while, it actually feels weird. Not empty… but like something is missing that should be there.</p>
+    <p class="reason">I want to talk to you because you're not perfect — and that's exactly why you're real to me. Your moods, your random <em>"baat nhi karni hai? bolda sath sath"</em> the moment I don't reply… your silly talks, your soft side. I like all of it.</p>
+    <p class="reason">I want to talk to you because you make normal conversations feel special. We can talk about nothing, and it still doesn't feel like nothing.</p>
+    <p class="reason">I want to talk to you because I like the way you care… even when you pretend you don't.</p>
+    <p class="reason">I want to talk to you because when I'm talking to you, I don't feel like I have to be someone else. I'm just… me.</p>
+    <p class="reason">I want to talk to you because you became a habit I never want to break. Not a bad habit… but the kind that feels like comfort. The kind that feels like <em>home.</em></p>
+  </div>
+
+  <div class="section-divider">
+    <hr><span class="section-divider-symbol">✦</span><hr>
+  </div>
+
+  <div class="portrait">
+    You're the kind of girl who looks down when I stare at you a little too long. Whose smile isn't always real. Who cries herself to sleep sometimes and cares a little too much about what I say.<br><br>
+    But you're also the same girl who loves with everything you have. Who makes every conversation feel warm. Who leaves everything around her a little better than before.
+  </div>
+
+  <div class="closing">
+    <p class="closing-question">so they asked me — why her?</p>
+    <p class="closing-truth">
+      It's not 1000 reasons.<br>
+      It's just this one truth —<br><br>
+      Out of everyone,<br>
+      my heart chooses you, Prachi.<br>
+      Again and again. Every single day.
+    </p>
+    <p class="closing-promise">
+      You're the kind of girl who will give me your heart.<br>
+      And I promise —<br>
+      I'll handle it with care.
+    </p>
+    <p class="heart-line">always yours <span class="heart">❤</span></p>
+  </div>
+
+  <div class="bottom-ornament">
+    <span>✦ &nbsp; ✦ &nbsp; ✦</span>
+  </div>
+
+</div>
+</body>
+</html>
